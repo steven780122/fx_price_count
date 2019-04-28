@@ -26,4 +26,5 @@ print(concat_series)
 print('****3***')
 price_counts = concat_series.value_counts()
 print(price_counts)
+print(price_counts.head(3).sort_index(ascending=False))    # sort by index (want to list price from low to high)
 
