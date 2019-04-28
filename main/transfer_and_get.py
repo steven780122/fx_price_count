@@ -20,4 +20,10 @@ high_series = data_csv_df.iloc[:, 3]
 print(open_series)
 print(type(open_series))
 print('****2***')
-print(pd.concat([open_series, high_series], ignore_index=True))
+concat_series = pd.concat([open_series, high_series], ignore_index=True)
+print(concat_series)
+
+print('****3***')
+price_counts = concat_series.value_counts()
+print(price_counts)
+
