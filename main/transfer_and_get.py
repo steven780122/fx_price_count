@@ -2,7 +2,7 @@ import pandas as pd
 
 # FILE_INPUT = 'sample/TEST.xlsx'
 # FILE_INPUT = 'sample/EURUSD5.csv'
-FILE_INPUT = 'sample/EURUSD5.csv'
+FILE_INPUT = 'sample/EURUSD_5.csv'
 
 
 FILE_OUTPUT = 'csvfile.csv'
