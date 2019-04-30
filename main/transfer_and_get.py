@@ -2,7 +2,7 @@ import pandas as pd
 
 # FILE_INPUT = 'sample/TEST.xlsx'
 # FILE_INPUT = 'sample/EURUSD5.csv'
-FILE_INPUT = 'sample/EURUSD_5.csv'
+FILE_INPUT = 'sample/EURUSD5.csv'
 
 
 FILE_OUTPUT = 'csvfile.csv'
@@ -31,14 +31,7 @@ print(concat_series)
 print('****3***')
 price_counts = concat_series.value_counts()
 print(price_counts)
-<<<<<<< HEAD
 head_sortbyprice = price_counts.head(200).sort_index(ascending=False)
 print(head_sortbyprice)    # sort by index (want to list price from low to high)
-
-=======
-head_sortbyprice = price_counts.head(300).sort_index(ascending=False)
-print(head_sortbyprice)    # sort by index (want to list price from low to high)
-head_sortbyprice.to_frame().to_csv(FILE_OUTPUT)      # get top high counts's price
->>>>>>> 65a363abc7801e76248078de640edb36d46e921d
 
 head_sortbyprice.to_frame().to_csv(FILE_OUTPUT)      # get top high counts's price
