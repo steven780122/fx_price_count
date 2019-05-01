@@ -1,11 +1,14 @@
 import pandas as pd
 
 # FILE_INPUT = 'sample/TEST.xlsx'
-# FILE_INPUT = 'sample/EURUSD5.csv'
-FILE_INPUT = 'sample/EURUSD_5.csv'
+# FILE_INPUT = 'sample/EURUSD_5.csv'     # GKPPrime很少
+FILE_INPUT = 'sample/EURUSD5.csv'       # Hantec較多
 
 
-FILE_OUTPUT = 'csvfile.csv'
+NUM_200 = 200
+NUM_300 = 300
+FILE_200_OUTPUT = '200csvfile.csv'
+FILE_300_OUTPUT = '300csvfile.csv'
 
 
 
@@ -31,7 +34,11 @@ print(concat_series)
 print('****3***')
 price_counts = concat_series.value_counts()
 print(price_counts)
-head_sortbyprice = price_counts.head(200).sort_index(ascending=False)
+# 200
+head_sortbyprice = price_counts.head(NUM_200).sort_index(ascending=False)
 print(head_sortbyprice)    # sort by index (want to list price from low to high)
+head_sortbyprice.to_frame().to_csv(FILE_200_OUTPUT)      # get top high counts's price
 
-head_sortbyprice.to_frame().to_csv(FILE_OUTPUT)      # get top high counts's price
+# 300
+head_sortbyprice = price_counts.head(NUM_300).sort_index(ascending=False)
+head_sortbyprice.to_frame().to_csv(FILE_300_OUTPUT)
